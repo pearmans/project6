@@ -1,5 +1,10 @@
+@font-face {
+  font-family: "glyphicon";
+  src: url(/fonts/glyphicons-halflings-regular.ttf) format("truetype");
+}
+
 body {
-	padding-top: 150px;
+	padding-top: 100px;
 }
 
 div {
@@ -19,4 +24,31 @@ blockquote {
 	display: inline-block;
 	text-align: left;
 	list-style: none;
+}
+
+nav {
+	text-align: center;
+	margin-bottom: 40px;
+	font-size: 40px;
+}
+
+nav ul {
+	padding-left: 0;
+}
+
+nav li {
+	list-style: none;
+	display: inline-block;
+	margin: 0 10px;
+	background: #acf;
+	width: 100px;
+	height: 100px;
+	padding-top: 17px;
+	border-radius: 60px;
+	text-align: center;
+	padding-right: 3px;
+}
+
+nav li:hover {
+	background: #8be;
 }

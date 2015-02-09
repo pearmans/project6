@@ -2,14 +2,14 @@ require 'sinatra'
 
 class MyWebbApp < Sinatra::Base
 	get '/' do
-		send_file "views/index#{ rand(3) + 1}.html"
+		erb :index1
 	end
 
-	get '/suspense/' do
-		send_file "views/index2.html"
+	get '/page2/' do
+		erb :index2
 	end
 
-	get '/finale/' do
-		send_file "views/index3.html"
+	get '/page3/' do
+		erb :index3
 	end
 end 
