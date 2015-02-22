@@ -1,2 +1,23 @@
-<blockquote>"Pancakes are the foundation of our breakfast palace, they make us who we are..."<br><small>President Breakfast</small></blockquote>
-<h3>Prepare for the breakfast of a lifetime</h3>
+	<h2>Holidays this month</h2>
+	<ul class="cal">
+		<% @holidays_m.each do |holiday| %>
+		  	<li class='col-sm-4 col-md-3'>
+		  		<h3><%= holiday[0]['date'] %></h3>
+		  		<% holiday.each do |blah| %>
+			  		<p><%= blah['name'] %></p>
+		  		<% end %>
+		  	</li>
+		<% end %>
+	</ul>
+	<h2>Holidays in August, 1993</h2>
+	<ul class="cal">
+		<% @holidays_dob.each do |holiday| %>
+		  	<li class='col-sm-4 col-md-3'>
+		  		<h3><%= holiday[0]['date'] %></h3>
+		  		<% holiday.each do |blah| %>
+			  		<p><%= blah['name'] %></p>
+		  		<% end %>
+		  	</li>
+		<% end %>
+	</ul>
+	
