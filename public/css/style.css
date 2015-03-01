@@ -74,6 +74,31 @@ nav li:hover {
 	background: #8be;
 }
 
+.container ul {
+	overflow: auto;
+}
+
+form {
+	margin-top: 40px;
+	clear: both;
+	text-align: center;
+}
+
+form input, form select {
+	margin: 0 12px;
+}
+
+button {
+	background: #acf;
+	border: 1px solid #8be;
+	border-radius: 3px;
+}
+
+button:hover {
+	background: #8be;
+	cursor: pointer;
+}
+
 .cat-pictures {
 	max-width: 600px;
 	max-height: 480px;

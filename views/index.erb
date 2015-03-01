@@ -1,23 +1,30 @@
-	<h2>Holidays this month</h2>
-	<ul class="cal">
-		<% @holidays_m.each do |holiday| %>
+<h2>Holidays</h2>
+<ul class="cal">
+	<% if @holidays_user.any? %>
+		<% @holidays_user.each do |date| %>
 		  	<li class='col-sm-4 col-md-3'>
-		  		<h3><%= holiday[0]['date'] %></h3>
-		  		<% holiday.each do |blah| %>
-			  		<p><%= blah['name'] %></p>
+		  		<h3><%= date[0]['date'] %></h3>
+		  		<% date.each do |holiday| %>
+			  		<p><%= holiday['name'] %></p>
 		  		<% end %>
 		  	</li>
-		<% end %>
-	</ul>
-	<h2>Holidays in August, 1993</h2>
-	<ul class="cal">
-		<% @holidays_dob.each do |holiday| %>
-		  	<li class='col-sm-4 col-md-3'>
-		  		<h3><%= holiday[0]['date'] %></h3>
-		  		<% holiday.each do |blah| %>
-			  		<p><%= blah['name'] %></p>
-		  		<% end %>
-		  	</li>
-		<% end %>
-	</ul>
-	
+	  	<% end %>
+	<% else %>
+		<p>No holiday data to display</p>
+	<% end %>
+</ul>
+<form>
+  <input type="number" name="year" class="" placeholder="Year" value="<%= params['year'] %>" required>
+  <select name="month" class="">
+  	<% for i in 0..11 %>
+    	<option value="<%= i + 1 %>" <%= 'selected="selected"' if params['month'] == (i + 1).to_s %> ><%= @months[i] %></option>
+    <% end %>
+  </select>
+
+  <select name="country" class="">
+  	<% @countries.each do |country| %>
+    	<option value="<%= country[0] %>" <%= 'selected="selected"' if params['country'] == country[0] %> ><%= country[1] %></option>
+    <% end %>
+  </select>
+  <button type="submit">Submit</button>
+</form>
